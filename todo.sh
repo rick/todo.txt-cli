@@ -262,6 +262,8 @@ die()
 cleanup()
 {
     [ -f "$TMP_FILE" ] && rm "$TMP_FILE"
+    cd $TODO_DIR
+    git commit -a -m "automated commit" >/dev/null
     return 0
 }
 
